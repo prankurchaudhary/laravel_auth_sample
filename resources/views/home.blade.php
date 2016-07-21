@@ -10,7 +10,7 @@
                 <div class="panel-body">
                     You are logged in!
                     <h4>Your name is {{ Auth::user()->name }}</h4>                    
-                    <img src="{{ Auth::user()->avatar }}" />
+                    You are registered with this email: {{ Auth::user()->email }}
                 </div>
             </div>
         </div>

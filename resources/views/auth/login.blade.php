@@ -62,7 +62,8 @@
                         OR <br>
                     
                         <a class="btn btn-primary" href="{{ url('auth/facebook') }}">Login with Facebook</a> <br><br>
-                                <a class="btn btn-primary" href="{{ url('auth/google') }}">Login with Google</a>
+                        <a class="btn btn-primary" href="{{ url('auth/google') }}">Login with Google</a>
+                        <a class="btn btn-primary" href="{{ url('auth/twitter') }}">Login with Twitter</a>
 
                     </div>
                     
