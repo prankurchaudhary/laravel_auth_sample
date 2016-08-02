@@ -26,7 +26,7 @@ class SocialController extends Controller
             } catch(Exception $e){
                 return redirect('auth/'.$provider);
             }
-            $authUser = $this->findOrCreateUser($user);
+            $authUser = $this->findOrCreateUser($user , $provider);
             Auth::login($authUser, true);
  
             return redirect()->route('home');
@@ -36,7 +36,7 @@ class SocialController extends Controller
                 return "Somthing from else block";
             } */
         }
-        private function findOrCreateUser($facebookUser)
+        private function findOrCreateUser($facebookUser , $provider)
                 {
                 $authUser = User::where(['email' => $facebookUser->email ])->first();
 
@@ -47,7 +47,8 @@ class SocialController extends Controller
                     return User::create([
                         'name' => $facebookUser->name,
                         'email' => $facebookUser->email,                        
-                        'avatar' => $facebookUser->avatar
+                        'avatar' => $facebookUser->avatar,
+                        'provider' => $provider
                     ]);
                 }
         

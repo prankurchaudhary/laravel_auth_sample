@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('avatar');
             $table->string('password');
+            $table->string('provider')->default('laravel_reg');
             $table->rememberToken();
             $table->timestamps();
         });
